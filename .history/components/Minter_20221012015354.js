@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import twinnyKiku from '../utils/TwinnyKiku.json';
-import { Box, Button, Flex, Image, Input, Text, Link } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Input, Text } from '@chakra-ui/react'
 import { useAccount, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
 import { useToast } from '@chakra-ui/react'
-import { ArrowForwardIcon } from '@chakra-ui/icons';
 
 const ContractAddy = "0xbAf0007B7129ed3E151DBa406340841b5a95216d";
 
@@ -140,8 +139,8 @@ return (
                     
                     </Flex>
                     <br/>
-                    <Text textAlign="center" fontWeight='700'>TWINESIS Hodlers get 1 free claim</Text><br/>
-                    <Link href="https://twinesis.twinnytwin.io/"><Text textAlign="center">Don't have a TWINESIS?<ArrowForwardIcon/></Text></Link>
+                    <Text textAlign="center" fontWeight='700'>TWINESIS Hodlers get 1 free claim</Text>
+                    <Link href="https://twinesis.twinnytwin.io/"><Text textAlign="center">Don't have a TWINESIS?</Text></Link>
         </div>
     ) : (
         <Text textAlign="center">You must be connected to Mint.</Text>

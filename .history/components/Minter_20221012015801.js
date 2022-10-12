@@ -140,7 +140,7 @@ return (
                     
                     </Flex>
                     <br/>
-                    <Text textAlign="center" fontWeight='700'>TWINESIS Hodlers get 1 free claim</Text><br/>
+                    <Text textAlign="center" fontWeight='700'>TWINESIS Hodlers get 1 free claim</Text>
                     <Link href="https://twinesis.twinnytwin.io/"><Text textAlign="center">Don't have a TWINESIS?<ArrowForwardIcon/></Text></Link>
         </div>
     ) : (

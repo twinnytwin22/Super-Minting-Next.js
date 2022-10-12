@@ -13,7 +13,7 @@ const NavBar = () => {
     const { isConnected } = useConnect();
  return (
      <div className="navbar">
-     <Flex justity="space-around" align="center" padding="12px">
+     <Flex justity="space-around" align="le" padding="12px">
          {/* Left Side - Social Media Icons */}
          <Flex justity="space-around" align="40%" padding="0 40px">
          <Link href="https://twinnytwin.io/kiku">

@@ -1,33 +1,31 @@
 import React from "react";
 import {  Button, Flex, Link, Spacer, Image } from '@chakra-ui/react'
 import { ArrowBackIcon } from '@chakra-ui/icons'
-
+import  { logowhite } from '../public/assets/logowhite'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   useConnect
 
 } from 'wagmi';
-const logowhite = '/assets/logowhite.png';
-
 const NavBar = () => {
     const { isConnected } = useConnect();
+
  return (
      <div className="navbar">
      <Flex justity="space-around" align="center" padding="12px">
          {/* Left Side - Social Media Icons */}
-         <Flex justity="space-around" align="40%" padding="0 40px">
+         <Flex justity="space-around" align="40%" padding="0 75px">
          <Link href="https://twinnytwin.io/kiku">
         <ArrowBackIcon  w={8} h={8}/></Link>
-        <Spacer width='40px'/>
         <Link href="https://twinnytwin.io/">
-        <Image minWidth='50px' boxSize='50px' src= {logowhite} alt="twinny-logo"/>
+        <Image src= {logowhite} alt="twinny-logo"/>
         </Link>
         </Flex>
          {/* Right Side - Social Media Icons */}
         <Flex
             justify="space-between"
             align="center"
-            width="40%"
+            width="50%"
            padding="30px 30px 30px 30px"></Flex>
                            <Spacer />
 
