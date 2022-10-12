@@ -12,11 +12,11 @@ const NavBar = () => {
 
  return (
      <div className="navbar">
-     <Flex justity="space-around" align="center" padding="12px">
+     <Flex justity="space-around" align="center" padding="10px">
          {/* Left Side - Social Media Icons */}
          <Flex justity="space-around" align="40%" padding="0 75px">
          <Link href="https://twinnytwin.io">
-        <ArrowBackIcon  w={8} h={8}/></Link>
+        <ArrowBackIcon/></Link>
         </Flex>
          {/* Right Side - Social Media Icons */}
         <Flex
@@ -35,10 +35,6 @@ const NavBar = () => {
             width="20%"
             align="right">
             <ConnectButton
-              accountStatus={{
-                smallScreen: 'avatar',
-                largeScreen: 'full',
-              }}
             onClick= {useConnect} /> </Flex>
         )}
      

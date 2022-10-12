@@ -35,10 +35,6 @@ const NavBar = () => {
             width="20%"
             align="right">
             <ConnectButton
-              accountStatus={{
-                smallScreen: 'avatar',
-                largeScreen: 'full',
-              }}
             onClick= {useConnect} /> </Flex>
         )}
      

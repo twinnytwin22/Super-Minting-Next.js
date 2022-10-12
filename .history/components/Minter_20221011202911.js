@@ -68,8 +68,8 @@ return (
 <Flex justify="center" align='center' height='100vh' paddingBottom="150px">
     <Box width="520px" justify="center">
    <div>
-    <Box boxSize='full'justifyItems="center">
-  <Image padding="30px" width="100%" minWidth="100px" src='/assets/big_superlogo1100.png' alt='super-logo' />
+    <Box boxSize='sm'>
+  <Image padding="30px" width="100%" minWidth="100px" src= '/assets/big_superlogo1100.png' alt='super-logo' />
 </Box>
     <Text fontWeight="700" fontSize="30px"  letterSpacing="-5.50" fontFamily="lekton" textShadow="0 2px 2px #∂0000000" textAlign='center'>
     { "2022 Twinny x Kiku's World by Sabet" }</Text></div>

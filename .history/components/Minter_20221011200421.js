@@ -12,32 +12,33 @@ const Minter = () => {
     const [mintAmount, setMintAmount] = useState(1);
     const { address } = useAccount();
     const isConnected = !!address;
+    const { config } = usePrepareContractWrite({      
+        addressOrName: ContractAddy,
+        contractInterface: twinnyKiku.abi,
+        functionName: 'publicPurchase',
+      })
+    const { data, write } = useContractWrite(config)
+    const { isLoading, isSuccess } = useWaitForTransaction({
+    hash: data?.hash,
+    })
 
-  
-
-    async function handleMint() {
-        if(window.ethereum) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum)
-            const signer = provider.getSigner();
-            const contract = new ethers.Contract(
-                ContractAddy,
-                twinnyKiku.abi,
-                signer
-            );
+    const handleMint = async () => {
             try {
-                const response = await contract.publicPurchase(address.toString(), BigNumber.from(mintAmount), {
+                setMintLoading(true);
+                const response = await write(address.toString(), BigNumber.from(mintAmount), {
                     value: ethers.utils.parseEther((0.03 * mintAmount).toString()),
                 });
                 console.log('response: ', response);
             } catch (err) {
                 console.log("error: ", err)
-            }
-        }
+            }finally {
+                setMintLoading(false);
+              }
     }
 
     async function handleClaim() {
         if(window.ethereum) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            const provider = ethers.AlchemyProvider(window.ethereum)
             const signer = provider.getSigner();
             const contract = new ethers.Contract(
                 ContractAddy,
@@ -68,8 +69,8 @@ return (
 <Flex justify="center" align='center' height='100vh' paddingBottom="150px">
     <Box width="520px" justify="center">
    <div>
-    <Box boxSize='full'justifyItems="center">
-  <Image padding="30px" width="100%" minWidth="100px" src='/assets/big_superlogo1100.png' alt='super-logo' />
+    <Box boxSize='sm'>
+  <Image padding="30px" width="100%" minWidth="100px" src= '/assets/big_superlogo1100.png' alt='super-logo' />
 </Box>
     <Text fontWeight="700" fontSize="30px"  letterSpacing="-5.50" fontFamily="lekton" textShadow="0 2px 2px #∂0000000" textAlign='center'>
     { "2022 Twinny x Kiku's World by Sabet" }</Text></div>

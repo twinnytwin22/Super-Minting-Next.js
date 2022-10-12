@@ -19,11 +19,10 @@ export default function Home() {
 
      
         <NavBar/>
-        <Minter  />  
-         <Footer/>
+        <Minter  />
         </div>
     <div className='moving-background'></div>
- 
+    <Footer/>
     </div>
 
      

@@ -1,7 +1,5 @@
 import React from "react";
 import {  Button, Flex, Link, Spacer } from '@chakra-ui/react'
-import { ArrowBackIcon } from '@chakra-ui/icons'
-
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   useConnect
@@ -12,11 +10,11 @@ const NavBar = () => {
 
  return (
      <div className="navbar">
-     <Flex justity="space-around" align="center" padding="12px">
+     <Flex justity="space-around" align="center" padding="30px">
          {/* Left Side - Social Media Icons */}
          <Flex justity="space-around" align="40%" padding="0 75px">
          <Link href="https://twinnytwin.io">
-        <ArrowBackIcon  w={8} h={8}/></Link>
+        <h4>Back to Main Site</h4> </Link>
         </Flex>
          {/* Right Side - Social Media Icons */}
         <Flex
@@ -35,10 +33,6 @@ const NavBar = () => {
             width="20%"
             align="right">
             <ConnectButton
-              accountStatus={{
-                smallScreen: 'avatar',
-                largeScreen: 'full',
-              }}
             onClick= {useConnect} /> </Flex>
         )}
      
